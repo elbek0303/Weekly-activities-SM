@@ -291,3 +291,40 @@ elbek@elbek-virtual-machine:~$:~/ros2_ws/src/py_srvcli$ nano setup.py
 
 ```
 
+
+# BUILD AND RUN
+
+
+```
+# BUILD AND RUN
+----------------
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ rosdep install -i --from-path src --rosdistro foxy -y
+#All required rosdeps installed successfully
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ colcon build --packages-select py_srvcli
+Starting >>> py_srvcli
+Finished <<< py_srvcli [2.13s]          
+Summary: 1 package finished [2.48s]
+
+# Open a new terminal, navigate to ros2_ws, and source the setup files
+----------------------------------------------------------------------
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ . install/setup.bash
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ ros2 run py_srvcli service
+[INFO] [1664849371.615817085] [minimal_service]: Incoming request
+a: 2 b: 3
+# Do the same thing for the client node
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ . install/setup.bash
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ ros2 run py_srvcli client 2 3
+[INFO] [1664849371.665846561] [minimal_client_async]: Result of add_two_ints: for 2 + 3 = 5
+
+```
+#Writing an action server and client(Python)
+```
+#Writing an action server
+-------------------------
+elbek@elbek-virtual-machine:~$ nano fibonacci_action_server.py
+
+#You can get the action_server code from this link:
+---------------------------------------------------
+
+```
+
