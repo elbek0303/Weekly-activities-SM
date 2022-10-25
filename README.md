@@ -1,4 +1,4 @@
-# week-4-Smart-Mobility
+# Smart-Mobility  Weekly activites
 
 
 First of all, make sure your system is up-to-date
