@@ -527,7 +527,6 @@ elbek@elbek-virtual-machine:~$/launch$ rqt_graph
 
 
 ```
-
 #Create a workspace for the package to live in:
 -----------------------------------------------
 elbek@elbek-virtual-machine:~$:~$ mkdir -p launch_ws/src
@@ -559,7 +558,7 @@ Finished <<< py_launch_example [1.22s]
 
 Summary: 1 package finished [1.43s]
 elbek@elbek-virtual-machine:~$:~/launch_ws/src/py_launch_example$ ros2 launch my_script_launch.py
-[INFO] [launch]: All log files can be found below /home/ulugbekmirzabakhromov/.ros/log/2022-10-18-02-37-36-481715-ubuntu-92643
+[INFO] [launch]: All log files can be found below /home/elbekjonyusupov/.ros/log/2022-10-18-02-37-36-481715-ubuntu-92643
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [talker-1]: process started with pid [92645]
 [talker-1] [INFO] [1666085857.924744749] [talker]: Publishing: 'Hello World: 1'
@@ -568,7 +567,6 @@ elbek@elbek-virtual-machine:~$:~/launch_ws/src/py_launch_example$ ros2 launch my
 [talker-1] [INFO] [1666085860.901022715] [talker]: Publishing: 'Hello World: 4'
 [talker-1] [INFO] [1666085861.893365115] [talker]: Publishing: 'Hello World: 5'
 [talker-1] [INFO] [1666085862.885724569] [talker]: Publishing: 'Hello World: 
-
 ```
 
 
