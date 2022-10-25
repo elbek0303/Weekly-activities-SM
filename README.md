@@ -525,9 +525,8 @@ elbek@elbek-virtual-machine:~$/launch$ rqt_graph
 
 #Integrating launch files into ROS 2 packages
 
-
 ```
-#Create a workspace for the package to live in:
+Create a workspace for the package to live in:
 -----------------------------------------------
 elbek@elbek-virtual-machine:~$:~$ mkdir -p launch_ws/src
 elbek@elbek-virtual-machine:~$:~$ cd launch_ws/src
