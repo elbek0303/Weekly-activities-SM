@@ -230,3 +230,64 @@ elbek@elbek-virtual-machine:~$:~/ros2_ws/src/py_pubsub/py_pubsub$ wget https://r
 
 ```
 
+
+Build and run
+
+```
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ rosdep install -i --from-path src --rosdistro foxy -y
+#All required rosdeps installed successfully
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ colcon build --packages-select py_pubsub
+Starting >>> py_pubsub
+Finished <<< py_pubsub [2.89s]          
+
+Summary: 1 package finished [4.10s]
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ rosdep install -i --from-path src --rosdistro foxy -y
+#All required rosdeps installed successfully
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ colcon build --packages-select py_pubsub
+Starting >>> py_pubsub
+Finished <<< py_pubsub [1.41s]          
+
+Summary: 1 package finished [1.66s]
+
+---------------------------------------
+# TESTING THE NODES
+---------------------------------------
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ . install/setup.bash
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ ros2 run py_pubsub talker
+[INFO] [1664342591.577268871] [minimal_publisher]: Publishing: "Hello World: 0"
+[INFO] [1664342592.061454408] [minimal_publisher]: Publishing: "Hello World: 1"
+[INFO] [1664342592.562140724] [minimal_publisher]: Publishing: "Hello World: 2"
+[INFO] [1664342593.062828040] [minimal_publisher]: Publishing: "Hello World: 3"
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ . install/setup.bash
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ ros2 run py_pubsub talker
+[INFO] [1664342591.577268871] [minimal_publisher]: Publishing: "Hello World: 0"
+[INFO] [1664342592.061454408] [minimal_publisher]: Publishing: "Hello World: 1"
+[INFO] [1664342592.562140724] [minimal_publisher]: Publishing: "Hello World: 2"
+[INFO] [1664342593.062828040] [minimal_publisher]: Publishing: "Hello World: 3"
+
+```
+
+Writing a simple service and client(Python)
+
+```
+
+#Firstly, create the package into the ros2_ws/src directory
+------------------------------------------------------------
+elbek@elbek-virtual-machine:~$:~$ cd ros2_ws
+elbek@elbek-virtual-machine:~$:~/ros2_ws$ cd src
+elbek@elbek-virtual-machine:~$:~/ros2_ws/src$ ros2 pkg create --build-type ament_python py_srvcli --dependencies rclpy example_interfaces
+going to create a new package
+package name: py_srvcli
+....
+
+# Write the service node inside the ros2_ws/src/py_srvcli/py_srvcli directory:
+------------------------------------------------------------------------------
+elbek@elbek-virtual-machine:~$:~/ros2_ws/src/py_srvcli$ nano service_member_function.py
+elbek@elbek-virtual-machine:~$:~/ros2_ws/src/py_srvcli$ nano client_member_function.py
+
+# Add an entry points into the setup.py to be able to run the servic&client nodes.
+----------------------------------------------------------------------------------
+elbek@elbek-virtual-machine:~$:~/ros2_ws/src/py_srvcli$ nano setup.py
+
+```
+
